@@ -4,6 +4,30 @@ const btnAvancar = window.document.getElementById('btn-avancar')
 const cartoes = window.document.querySelectorAll('.cartao') //criou uma variavel pra varias classes com o mesmo nome 'cartao'
 let cartaoAtual = 0;
 
+cartoes.forEach (cartao => {
+
+  console.log(cartao);
+    cartao.addEventListener('click', function(){
+      console.log('clicou')
+
+      const cartaVirada = cartao.querySelector('.carta-virada')
+
+      //virar o cartao
+
+      cartao.classList.toggle('virar');
+
+      //mostrar o fundo da carta
+
+      cartaVirada.classList.toggle('mostrar-fundo-carta');
+
+      const descricao = cartao.querySelector('.descricao')
+
+      descricao.classList.toggle('esconder')
+
+
+    })
+
+} )//para cada cartao, e a memsa coisa q addeventlistenner so q pra cada um
 
 btnAvancar.addEventListener('click', function () {
 
